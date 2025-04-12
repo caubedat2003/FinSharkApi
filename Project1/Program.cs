@@ -1,4 +1,6 @@
 
+using FinShark.Interfaces;
+using FinShark.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -97,6 +99,7 @@ namespace Project1
             builder.Services.AddScoped<IStockRepository, StockRepository>();
             builder.Services.AddScoped<ICommentRepository, CommentRepository>();
             builder.Services.AddScoped<ITokenService, TokenService>();
+            builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 
             var app = builder.Build();
 

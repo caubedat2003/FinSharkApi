@@ -1,5 +1,8 @@
-﻿namespace Project1.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Project1.Models
 {
+    [Table("Comments")]
     public class Comment
     {
         public int Id { get; set; }
@@ -8,5 +11,8 @@
         public DateTime CreatedOn { get; set; } = DateTime.Now;
         public int? StockId { get; set; } // Navigator
         public Stock? Stock { get; set; }
+
+        public string AppUserId { get; set; }
+        public AppUser AppUser { get; set; }
     }
 }
